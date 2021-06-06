@@ -1,5 +1,11 @@
 .gradle
+.idea
+
 /build/
+/out/
+
+# OAuth 프로퍼티
+application-real-oauth.properties
 
 # Ignore Gradle GUI config
 gradle-app.setting

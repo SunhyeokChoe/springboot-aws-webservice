@@ -1,0 +1,47 @@
+/*******본 프로젝트의 플러그인 의존성 관리 설정 스크립트*******
+ * Created by SunhyeokChoe (Nara Controls, SW/HW Lab)
+ * Reach me via
+ *   Github: https://github.com/SunhyeokChoe
+ *   Notion: https://www.notion.so/d88bfec93c9241c6a96452803495b79d
+ * Title: springboot-aws-webservice
+ *
+ * << 개발환경 >>
+ * Java 8(JDK 1.8)
+ * Gradle 4.8 ~ Gradle 4.10.2
+ *****************************************************/
+
+buildscript {
+    // build.gradle에서 사용하는 전역변수를 설정
+    ext {
+        springBootVersion = '2.1.7.RELEASE' // 2.1.7, 2.1.8, 2.1.9 다 괜찮음
+                                            // spring-boot-gradle-plugin의 2.1.7 RELEASE를 의존성으로 받겠다는 의미
+    }
+    repositories {
+
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'com.sunhyeokchoe.book'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
