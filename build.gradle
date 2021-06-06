@@ -1,5 +1,5 @@
-/*******본 프로젝트의 플러그인 의존성 관리 설정 스크립트*******
- * Created by SunhyeokChoe (Nara Controls, SW/HW Lab)
+/**************본 프로젝트의 플러그인 의존성 관리 설정 스크립트**************
+ * Created by SunhyeokChoe
  * Reach me via
  *   Github: https://github.com/SunhyeokChoe
  *   Notion: https://www.notion.so/d88bfec93c9241c6a96452803495b79d
@@ -8,38 +8,48 @@
  * << 개발환경 >>
  * Java 8(JDK 1.8)
  * Gradle 4.8 ~ Gradle 4.10.2
- *****************************************************/
+ *******************************************************************/
 
 buildscript {
-    // build.gradle에서 사용하는 전역변수를 설정
+    // build.gradle에서 사용할 전역변수 선언
     ext {
         springBootVersion = '2.1.7.RELEASE' // 2.1.7, 2.1.8, 2.1.9 다 괜찮음
                                             // spring-boot-gradle-plugin의 2.1.7 RELEASE를 의존성으로 받겠다는 의미
     }
-    repositories {
 
-        mavenCentral()
-        jcenter()
+    // 각종 의존성(라이브러리)들을 어떤 원격 저장소에서 받을지 선언
+    repositories {
+        // 기본적으로 mavenCentral을 많이 사용하지만, 최근에는 라이브러리 업로드 난이도 때문에 Jcenter도 많이 사용함
+        mavenCentral() // 본인이 만든 라이브러리를 업로드하기 위해서는 정말 많은 과정과 설정이 필요하다보니
+                       // 개발자들간 라이브러리 공유가 힘들어짐
+        jcenter() // mavenCentral의 문제점을 개선해 라이브러리 업로드를 간단하게 하였음
+                  // 또한, jcenter에 라이브러리를 업로드하면 mavenCentral에도 업로드될 수 있도록 자동화 가능
     }
+
+    // 프로젝트 개발에 필요한 의존성들을 선언
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
-plugins {
-    id 'java'
-}
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 group 'com.sunhyeokchoe.book'
-version '1.0-SNAPSHOT'
+version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 test {
