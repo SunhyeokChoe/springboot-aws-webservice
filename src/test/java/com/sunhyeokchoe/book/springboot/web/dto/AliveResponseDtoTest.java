@@ -12,7 +12,7 @@ public class AliveResponseDtoTest {
         int amount = 1000;
 
         // when
-        AliveResponseDto dto = new HelloResponseDto(name, amount);
+        AliveResponseDto dto = new AliveResponseDto(name, amount);
 
         // then
         assertThat(dto.getName()).isEqualTo(name); // [#2], [#3]
