@@ -1,6 +1,8 @@
 package com.sunhyeokchoe.book.springboot.web;
 
+import com.sunhyeokchoe.book.springboot.web.dto.AliveResponseDto;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.
 RestController;
 
@@ -16,7 +18,13 @@ public class AliveController {
      * 이제 이 프로젝트는 /alive로 요청이 오면 문자열 "Im alive!"를 반환하는 기능을 가지게 된다.
      */
     @GetMapping("/alive")
-    public String hello() {
+    public String alive() {
         return "Im alive!";
+    }
+
+    @GetMapping("/alive/dto")
+    public AliveResponseDto aliveDto(@RequestParam("name") String name, // [#1]
+                                     @RequestParam("amount") int amount) {
+        return new AliveResponseDto(name, amount);
     }
 }
