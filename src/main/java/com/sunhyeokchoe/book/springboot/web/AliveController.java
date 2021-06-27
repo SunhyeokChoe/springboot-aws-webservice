@@ -28,3 +28,10 @@ public class AliveController {
         return new AliveResponseDto(name, amount);
     }
 }
+
+/*
+ * [#1] @RequestParam
+ *   - 외부에서 API로 넘긴 파라미터를 가져오는 어노테이션이다.
+ *   - 여기에서는 외부에서 name (@RequestParam("name")) 이란 이름으로 넘긴 파라미터를 메소드 파라미터
+ *     name(String name)에 저장하게 된다.
+ */
