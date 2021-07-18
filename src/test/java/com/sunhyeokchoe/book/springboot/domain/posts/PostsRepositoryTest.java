@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class PostsRespositoryTest {
+public class PostsRepositoryTest {
 
     @Autowired
     PostsRepository postsRepository;
@@ -24,7 +24,7 @@ public class PostsRespositoryTest {
     }
 
     @Test
-    public void load_post() { // 게시글 저장 불러오기
+    public void load_save_and_post() { // 게시글 저장 불러오기
 
         // given
         String title = "테스트 게시글";
