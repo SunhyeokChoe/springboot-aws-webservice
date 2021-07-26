@@ -1,5 +1,7 @@
 package com.sunhyeokchoe.book.springboot.web.dto;
 
+import com.sunhyeokchoe.book.springboot.domain.posts.Posts;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +25,6 @@ public class PostsSaveRequestDto {
                 .title(title)
                 .content(content)
                 .author(author)
-                .builder();
+                .build();
     }
 }

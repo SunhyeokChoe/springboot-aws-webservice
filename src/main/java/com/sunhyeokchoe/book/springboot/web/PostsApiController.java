@@ -1,6 +1,8 @@
 package com.sunhyeokchoe.book.springboot.web;
 
+import com.sunhyeokchoe.book.springboot.services.posts.PostsService;
 import com.sunhyeokchoe.book.springboot.web.dto.PostsSaveRequestDto;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
