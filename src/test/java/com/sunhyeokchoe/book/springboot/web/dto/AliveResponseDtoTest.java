@@ -4,7 +4,6 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat; // [#1]
 
 public class AliveResponseDtoTest {
-
     @Test
     public void test_lombok_functionality() {
         // given

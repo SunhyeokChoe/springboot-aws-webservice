@@ -38,7 +38,7 @@ public class PostsApiControllerTest {
         postsRepository.deleteAll();
     }
 
-    // posts 테스트
+    // 게시글 저장 테스트
     @Test
     public void Posts_posts() throws Exception {
         // given
@@ -69,7 +69,7 @@ public class PostsApiControllerTest {
                 .isEqualTo(content);
     }
 
-    // update 테스트
+    // 게시글 업데이트 테스트
     @Test
     public void Posts_update() throws Exception {
         // given

@@ -1,5 +1,6 @@
 package com.sunhyeokchoe.book.springboot.domain.posts;
 
+import com.sunhyeokchoe.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import javax.persistence.Id;
 @Getter
 @NoArgsConstructor
 @Entity // [#1]
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id // [#2]
     @GeneratedValue(strategy = GenerationType.IDENTITY) // [#3]

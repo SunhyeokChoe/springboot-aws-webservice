@@ -5,7 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 // Posts 엔티티 클래스로 데이터베이스에 접근 가능하게 해줄 인터페이스
 public interface PostsRepository extends JpaRepository<Posts, Long> { // [#1]
 
-
 }
 
 /*
