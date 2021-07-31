@@ -1,13 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>스프링 부트 웹서비스</title>
-</head>
-<body>
-    <h1>TEST</h1>
-</body>
-</html>
+{{>layout/header}} <!-- [#1] -->
+
+<h1>TEST</h1>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/posts/save" role="button"
+               class="btn btn-primary">글 등록</a>
+        </div>
+    </div>
+</div>
+
+{{>layout/footer}}
+
+
+<!--
+ * - 사이드 프로젝트이므로 외부 서비스에 의존적이여도 상관없기에 CDN을 레이아웃 방식으로 추가했다.
+ *   레이아웃 방식이란 "공통 영역을 별도의 파일로 분리하여 한 곳에서 가져다 쓰는 방식"을 말한다.
+ *
+ * [#1] \{{> }}
+ *   - 현재 머스테치 파일(index.mustache)을 기준으로 다른 파일을 가져온다.
+ *
+-->
